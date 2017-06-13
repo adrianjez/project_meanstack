@@ -1,0 +1,18 @@
+extends ../base_template
+block content
+    div
+        h1 Messages list:
+        if !questions || !questions.length
+            div There is no messages.
+        ul.scroll
+            for question in questions
+                li #{question.subject}
+                    if(!question.read)
+                        div Address: #{question.email}
+                        div Message: #{question.message}
+                    div Date: #{new Date(question.date.getTime()).toLocaleString()}
+                    div
+                        a(href="/questions/delete/" + question.id) Delete
+                        br
+                        a(href="/questions/read/" + question.id ) #{question.read ? "Make not read" : "Make read"}
+                    br

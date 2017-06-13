@@ -1,0 +1,21 @@
+extends ../base_template
+
+block content
+    article
+        h1 Zakładanie nowego Konta
+        p Aby założyć konto wypełnij poniższy formularz
+        form(action='/users/register',method='post')
+            div.form-group
+                label Login:
+                input(type='text',name='username',placeholder="Enter Username...")
+            div.form-group
+                label Email:
+                input(type='text',name='email',placeholder="Enter Email...")
+            div.form-group
+                label Hasło:
+                input(type='password', name='password',placeholder="Enter Password...")
+            div.form-group
+                label Potwierdź Hasło:
+                input(type='password', name='confirm_password',placeholder="Confirm Password...")
+            div.form-group
+                input(type='submit', value='dodaj')

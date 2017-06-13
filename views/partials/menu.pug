@@ -1,0 +1,23 @@
+div.menu
+    br
+    a(href = '/') #{'Main page'}
+    p.line
+    if !user
+        a(href = '/users/register') Don't have an account
+        br
+        a(href = '/users/login') Login
+        p.line
+    a(href = '/question') #{'Ask Question'}
+    if user
+        p.line
+        div Menu:
+        a(href = '/animals/') #{'Animals list'}
+        br
+        a(href = '/animals/add') Add animal
+        br
+        br
+        a(href = '/users/logout') #{'Logout'}
+        if user.admin
+            p.line
+            div Part visible only for Admin:
+            a(href = '/questions/') #{'Messages List'}

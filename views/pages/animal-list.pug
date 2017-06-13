@@ -1,0 +1,24 @@
+extends ../base_template
+block content
+    div.button
+        a(href="/animals/add") Create new one
+    div
+        h1 Animals list:
+        if !animals || !animals.length
+            div No Animals!
+
+        for animal, i  in animals
+            ul Animal index #{i + 1 }
+                img.image(src=animal.photo )
+                p Animal Name: #{animal.name}
+                p Animal Category: #{animal.category}
+                p Animal Title: #{animal.title}
+                p Animal Description: #{animal.description}
+                p Is Active #{animal.active ? "Yes" : "No"}
+                p Options:
+                    ul
+                        li
+                            a(href="/animals/" + animal.id) Edit
+                        li
+                            a(href="/animals/delete/" + animal.id ) Delete
+            hr

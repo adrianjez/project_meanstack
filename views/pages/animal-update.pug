@@ -1,0 +1,25 @@
+extends ../base_template
+block content
+    form( method="POST" action='/animals/update/' + animal.id )
+        div.form-group
+            label(for="category") Category:
+            input#category.form-control(type='text', placeholder='Type Category...' name='category' value=animal.category)
+        div.form-group
+            label(for="name") Name:
+            input#name.form-control(type='text', placeholder='Type Name...' name='name' value=animal.name)
+        div.form-group
+            label(for="title") Title:
+            input#title.form-control(type='text', placeholder='Type Title...' name='title' value=animal.title)
+        div.form-group
+            label(for="description") Description:
+            input#description.form-control(type='text', placeholder='Type Description...' name='description' value=animal.description)
+        div.form-group
+            label(for="photo") Photo:
+            input#photo.form-control(type='text', placeholder='Type Photo...' name='photo' value=animal.photo)
+        div.form-group
+            label(for="active") Is active:
+            input#active.form-control(type='checkbox',checked=animal.active, name='active')
+        div.form-group
+            input(type='submit', value='zaktualizuj')
+
+
